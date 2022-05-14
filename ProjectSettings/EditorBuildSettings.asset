@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Horizontal Plane Detection.unity
+    guid: 7f921d9f26d3c48d6a79642e97244367
+  - enabled: 1
+    path: Assets/Scenes/Object Placement.unity
+    guid: 092c91943a3e84897b6be7cc39d67b62
   m_configObjects:
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 5b06963fd32bb42ee9b38717ada117bf,
       type: 2}
