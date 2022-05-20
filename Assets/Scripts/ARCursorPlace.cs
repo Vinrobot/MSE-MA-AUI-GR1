@@ -28,7 +28,6 @@ public class ARCursorPlace : MonoBehaviour
     void Update()
     {
         // TODO: Handle duplicate on same position (Collider + Distance ?)
-        // TODO: Handle Raycast on specific face
 
         Vector3 nextPosition;
         Quaternion nextRotation = Quaternion.identity;
@@ -46,7 +45,7 @@ public class ARCursorPlace : MonoBehaviour
             hit.transform.SetColor(ColorSelected);
             _selected = hit.transform;
 
-            nextPosition = hit.transform.position + Vector3.up * SnapToValue / 2;
+            nextPosition = hit.transform.position + hit.normal * SnapToValue / 3 * 2;
         }
         else
         {
