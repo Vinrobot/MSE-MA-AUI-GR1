@@ -417,7 +417,6 @@ MonoBehaviour:
   cursor: {fileID: 1505384697}
   objectToPlace: {fileID: 3352423900559153445, guid: 299b2bdb00ff1440bb7fb85b5d3919c0,
     type: 3}
-  raycastManager: {fileID: 1009962615}
 --- !u!114 &1009962614
 MonoBehaviour:
   m_ObjectHideFlags: 0
