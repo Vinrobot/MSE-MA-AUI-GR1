@@ -12,13 +12,4 @@ public static class Extensions
             renderer.material.color = color;
         }
     }
-
-    public static void SetTag(this Transform transform, string tag)
-    {
-        transform.gameObject.tag = tag;
-        foreach (Transform child in transform)
-        {
-            SetTag(child, tag);
-        }
-    }
 }
