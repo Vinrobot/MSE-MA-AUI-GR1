@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
 
 public class ARCursorPlace : MonoBehaviour
 {
     private readonly float SnapToValue = 0.1f;
     private readonly string SnapToLayer = "Block";
-    private readonly Color ColorSelected = Color.green;
-    private readonly Color ColorNotSelected = Color.blue;
 
     public ARCursor cursor;
-    public GameObject objectToPlace;
+    public Block objectToPlace;
+    public ColorSelector colorSelector;
 
-    private GameObject _next;
-    private Transform _selected;
+    private Block _next;
+    private Block _selected;
     private int _snapToLayer;
 
     void Start()
@@ -35,7 +33,7 @@ public class ARCursorPlace : MonoBehaviour
 
         if (_selected)
         {
-            _selected.SetColor(ColorNotSelected);
+            _selected.currentState = Block.State.Normal;
             _selected = null;
         }
 
@@ -43,8 +41,8 @@ public class ARCursorPlace : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, 1 << _snapToLayer))
         {
-            hit.transform.SetColor(ColorSelected);
-            _selected = hit.transform;
+            _selected = hit.transform.GetComponentInParent<Block>();
+            _selected.currentState = Block.State.Selected;
 
             nextPosition = hit.transform.position + hit.normal * SnapToValue / 3 * 2;
         }
@@ -62,8 +60,11 @@ public class ARCursorPlace : MonoBehaviour
             return;
 
         _next.transform.SetLayerRecursively(_snapToLayer);
-        _next.transform.SetColor(ColorNotSelected);
+        _next.currentState = Block.State.Normal;
+        _next.ColorNormal = colorSelector.value.color;
+
         _next = Instantiate(objectToPlace, nextPosition, nextRotation);
+        _next.currentState = Block.State.Temporary;
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)

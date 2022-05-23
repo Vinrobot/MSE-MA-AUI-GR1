@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4912682390558275427}
+  - component: {fileID: 5761628202741649822}
   m_Layer: 0
   m_Name: iCube
   m_TagString: Untagged
@@ -31,6 +32,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5761628202741649822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352423900559153445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03f6fb6140b04f2bb9017554aeabc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorTemporary: {r: 1, g: 1, b: 1, a: 1}
+  ColorSelected: {r: 0, g: 1, b: 0, a: 1}
+  ColorNormal: {r: 0, g: 0, b: 1, a: 1}
+  targetRenderer: {fileID: 7421663547338019994}
+  currentState: 2
 --- !u!1 &7421663547338019988
 GameObject:
   m_ObjectHideFlags: 0
