@@ -44,7 +44,7 @@ public class ARCursorPlace : MonoBehaviour
             _selected = hit.transform.GetComponentInParent<Block>();
             _selected.currentState = Block.State.Selected;
 
-            nextPosition = hit.transform.position + hit.normal * SnapToValue / 3 * 2;
+            nextPosition = _selected.transform.position + SnapToValue * hit.normal;
         }
         else
         {
