@@ -6,8 +6,8 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARCursorPlace : MonoBehaviour
 {
-    private readonly float SnapToValue = 0.1f;
-    private readonly string SnapToLayer = "Block";
+    public static readonly float SnapToValue = 0.1f;
+    public static readonly string SnapToLayer = "Block";
 
     public ARCursor cursor;
     public Block objectToPlace;
