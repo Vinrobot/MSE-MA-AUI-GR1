@@ -413,6 +413,12 @@ MonoBehaviour:
   - text: Magenta
     image: {fileID: 0}
     color: {r: 1, g: 0, b: 1, a: 0}
+  - text: White
+    image: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: Black
+    image: {fileID: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &374554068
 GameObject:
   m_ObjectHideFlags: 0
